@@ -37,7 +37,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t cloudops-api:1.0 .
+          docker build -t cloudaps-api:1.0 .
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/cloudops-api:1.0
