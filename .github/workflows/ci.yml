@@ -28,7 +28,6 @@ jobs:
       - name: Run tests
         run: |
           PYTHONPATH=. pytest
-
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -37,7 +36,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t cloudaps-api:1.0 .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/cloudaps-api:1.0 .
+
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/cloudaps-api:1.0
