@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI(
     title="CloudOps API",
-    version="1.0.1"
+    version="1.0.2"
 )
 
 
